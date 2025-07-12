@@ -1,0 +1,307 @@
+\documentclass[letterpaper,11pt]{article}
+%====== Packages =================================================================
+\usepackage{graphicx, xcolor, color}
+\usepackage{booktabs, tabularx, tabulary, multirow, threeparttable}
+\usepackage{amsmath, amsthm, amssymb, amsfonts, bm, dcolumn}
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\usepackage[hang]{subfigure}
+\usepackage{setspace}
+\usepackage[colorlinks=true, urlcolor={blue}, citecolor={blue}, linkcolor={red}]{hyperref}
+\usepackage{verbatim}
+\usepackage{vmargin}
+%\usepackage{cmbright}
+\usepackage{rotating}
+\newcommand{\R}{\texttt{R}}
+\newcommand{\compresslist}{%
+\setlength{\itemsep}{1pt}%
+\setlength{\parskip}{0pt}%
+\setlength{\parsep}{0pt}%
+}
+%====== Set Margins =================================================================
+       \setpapersize{USletter}
+       \setmarginsrb{1.0in}{1.0in}{1.0in}{0.40in}{0in}{0in}{0in}{0.6in}
+%====== Title 
+
+\begin{document}
+%\bibliographystyle{agsm}
+%\bibliographystyle{dcu}
+%\bibliographystyle{kluwer}
+%\citationstyle{agsm}
+%\citationstyle{dcu}
+%\maketitle
+%====== Text =================================================================
+\begin{center}
+
+\begin{large} \textbf{POLITSC 4782: Political Analysis II}\end{large}\\
+\begin{large} The Ohio State University, Spring (2022) \end{large}\\
+
+\vspace{10pt}
+\hrule
+\vspace{10pt}
+
+\noindent \textbf{Instructor:} Seamus Wagner\\
+%\noindent \textbf{Office:} 2014 Derby Hall\\
+\noindent \textbf{Email:} \href{mailto:wagner.1470@osu.edu}{wagner.1470@osu.edu}\\
+\noindent \textbf{Office Hours:} 2:15 PM – 4:15 PM on Mondays, or by appointment - Derby Hall 3078\\
+\noindent Asynchronous Online Course\\
+\noindent \textbf{Course Website:} Carmen\\
+
+\vspace{10pt}
+\hrule
+
+\end{center}
+\noindent This is an advanced-level course of statistical modeling in the field of political science. It directly builds on statistical basics taught in POLITSC 4781 or other intro-level courses of quantitative analysis, and shows the methodological gateway to the ``state-of-the-art'' social scientific research. Specifically, it covers a family of the most commonly used statistical models known as linear and generalized linear regression as well as more advanced techniques such as matching and hierarchical models. 
+
+This course combines lectures and lab tutorials. Lectures elaborate methodological basics and lab tutorials focus on teaching practical skills in the software environment of \texttt{R}. There are assignments on a weekly basis to engage students in class learning. The course is taught in person. In addition, the instructor hosts office hours every Monday and are committed to responding students' questions via emails every weekday. Once updated, assignments and class materials will be available on the Carmen course homepage. Typically, lectures will take place on Mondays of each week and labs will take place on Wednesdays of each week. 
+
+By the end of this course, students are expected to be able to (1) understand the basics of most statistical models commonly used in social scientific research and industries, (2) evaluate the quality of quantitative analyses in media and academic journals critically, (3) use \texttt{R} to process and analyze quantitative data comfortably and proficiently, and (4) employ statistical models to address a variety of questions in their professional and personal life. 
+
+\section*{Prerequisites}
+This course assumes that students have working knowledge of quantitative analysis (e.g. variable, measure, data visualization) and preliminary understanding of statistics (e.g. mean, standard deviation, probability). Ideally, students shall take POLITSC 4781 before choosing this course. But it is still feasible, though somewhat challenging, to take this course without any statistical training background. 
+
+\section*{How This Online Course Works}
+\section*{Mode of Delivery}
+This course is in-person unless the university mandates otherwise. Given the uncertain nature of the ongoing pandemic, some form of hybrid or fully online mode of instruction may be required. 
+
+\subsection*{Credit Hours and Work Expectations}
+This is a 3-credit-hour course. According to Ohio State policy (\url{go.osu.edu/credithours}), students should expect around 3 hours per week of time spent on direct instruction (instructor content and Carmen activities, for example) in addition to 6 hours of homework assignments.
+
+\subsection*{Participation Requirements}
+The following is a summary of students' expected participation:
+
+\begin{itemize}
+	\item \textbf{Participating in activities for attendance}\\
+	You are expected to come to class and engage for both lectures and lab sessions, as well as complete assignments. If you have a situation that might cause you to miss an entire week of class, discuss it with me as soon as possible.
+	\item \textbf{Office hours: OPTIONAL}\\
+	My office hours will be held in-person or via zoom and are optional. But I strongly encourage everyone to have a one-on-one meeting with me at some point of the semester to make sure that you are making progress on the right track. 
+	\item \textbf{Participating in class: COMPREHESIVE CHECKS/PROBLEM SETS PER WEEK}\\
+	Each week you can expect to do a set of comprehensive check questions after a lecture and one set of practical problems after a lab session. The regular deadlines for both types of assignments are the end of Fridays. Students are expected to first watch pre-recorded lectures and lab tutorials before start working on these assignments. Anyone who has questions about assignments are welcome to come to my regular office hours on Monday or send emails to me if your questions are short. All assignments are available and need to be submitted on Carmen. 
+\end{itemize}
+
+\section*{Course Materials and Technologies}
+
+\subsection*{Textbook}
+No textbook is required. But I will post some materials (webpages and articles) on Carmen as supplementary readings for your reference. 
+
+\subsection*{Software}
+
+\begin{itemize}
+	\item Microsoft Office 365: All Ohio State students are now eligible for free Microsoft Office 365. Full instructions for downloading and installation can be found at \url{go.osu.edu/office365help}.
+	\item \texttt{R} (\url{https://www.r-project.org/}) and ideally \texttt{RStudio} (\url{https://rstudio.com/}) as well.
+\end{itemize}
+
+\section*{Grading and Faulty Response}
+
+\subsection*{How your grade is calculated}
+\begin{itemize}
+    \item Participation (combination of participation, questions, and office hours): 20\%
+	\item 15 comprehensive checks (one for each lecture, starting from Week 2): 30\%
+	\item 8 problem sets (one for each lab session, starting from Week 2): 30\%
+	\item final exam (online, open-book, open-note): 20\%\\
+\end{itemize}
+
+\subsection*{Descriptions of Assignments}
+
+\subsubsection*{Participation}
+This course is designed for students to be in class and engaged with the material. It is will be very difficult to succeed in this course if you chose not to attend. Participation can take many forms. Some of the following are common ways to participate. Engagement via questions or clarifications during lectures or labs. Answering questions posed during lectures and labs. Coming to office hours for clarification and help. 
+\subsubsection*{Comprehensive Checks}
+Comprehensive checks are questions assigned on a weekly basis to check your understanding of a given lecture. Each assignment normally consists of three questions to which you are expected to write brief answers (normally 3-5 sentences for each question would suffice) based on your understanding of class materials. This part of assignments will be posted on Carmen once the corresponding lectures are done, and should be answered on Carmen by the end of the following Sunday (11:59 PM EST). Starting from Week 2, you are expected to turn in one set of comprehensive check questions on a weekly basis. 
+
+The purpose of comprehensive checks is fourfold: (1) to signal important materials in each topic, (2) to motivate you to study in a consistent and timely manner, (3) to help me assess everyone's progress so that I can try to improve my teaching to serve you better, (4) to give you low-stakes assignments and opportunity for regular feedback. You will get full credit for successfully completing each set of comprehensive check questions, as long as you demonstrate correct understanding of the materials. This part of assignments must be completed independently.
+
+\subsubsection*{Problem Sets}
+Problem sets aim to give a regular test on students' mastery of the methods taught in lab sessions. These assignments focus on practical skills and applications with \texttt{R}. They will be posted once the corresponding lab tutorials are completed and due on the end of the following Sunday. Students are encouraged to discuss the problems with the instructor or classmates. However, you must write your answers by yourself. Indicate who you worked with, if anyone, at the top of the document. 
+
+\subsubsection*{Final Exam}
+In the final week, we will have an online exam run on Carmen. This exam covers all course materials and test on your mastery of both statistical basics and practical skills. While discussion or collaboration is not allowed in the exam, students are free to use any notes or check out any source of information. The exam must be taken independently. The exam will be timed but will allow for adequate time given the material. This is not intended as an exam to test how fast you can code, please use code from earlier assignments you completed where relevant. 
+
+\subsection*{Late Assignments Policy}
+Assignments must be submitted on Carmen before the deadlines (11:59 PM of each Sunday). If a student is unable to complete an assignment, she or he will be allowed to turn it in late only if the absence is due to a documented medical, family, or similar serious emergency, observance of religious holy days (which requires written notification to the instructor at least 5 days prior to the requested absence date), or properly documented University-sponsored planned activities. Incomplete assignments in all other cases will result in a score of zero. If you become aware that you will not be able to complete an assignment or final project ahead of time, please contact the instructor and seek permission for an extension as soon as possible.
+
+\subsection*{Instructor Feedback and Response Time}
+I am providing the following list to give you an idea of my intended availability throughout the course. (Remember that you can contact me via email \href{mailto:wagner.1470@osu.edu}{wagner.1470@osu.edu} at any time if you have a technical problem): 
+
+\begin{itemize}
+	\item Email: I will reply to emails within 24 hours on weekdays. If I do not, feel free to send a reminder. 
+	\item Office Hours: 2:15 - 4:15 PM EST located in Derby 3078. Please set up a time in advance to meet if you know you are unable to make that time. It is unlikely I will be able to accommodate day of requests for office hours. 
+	
+\end{itemize}
+
+\subsection*{Grading scale}
+\noindent Final letter grades are assigned on the following scale:\\
+\begin{itemize}
+	\item A: 93-100,  A-: 90-92
+	\item B+: 87-89,  B: 83-86,  B-: 80-82
+	\item C+: 77-79,  C: 73-76,  C-: 70-72
+	\item D+: 67-69,  D: 60-66,  E: below 60\\
+\end{itemize}
+
+
+\section*{Other Course Policies}
+
+\subsection*{Discussion and Communication Guidelines}
+
+The following are my expectations for how we should communicate as a class. Above all, please remember to be respectful and thoughtful. 
+
+\begin{itemize}
+	\item Writing style: While there is no need to participate in class discussions as if you were writing a research paper, you should remember to write using good grammar, spelling, and punctuation. A more conversational tone is fine for non-academic topics.
+	\item Tone and civility: Let's maintain a supportive learning community where everyone feels safe and where people can disagree amicably.
+\end{itemize}
+
+\subsection*{Academic Integrity Policy}
+
+See Descriptions of major course assignments, above, for my specific guidelines about collaboration and academic integrity in the context of this online class.\\
+
+\noindent \textbf{Ohio State's academic integrity policy}
+
+\noindent Academic integrity is essential to maintaining an environment that fosters excellence in teaching, research, and other educational and scholarly activities. Thus, The Ohio State University and the Committee on Academic Misconduct (COAM) expect that all students have read and understand the university’s Code of Student Conduct (\url{studentconduct.osu.edu}), and that all students will complete all academic and scholarly assignments with fairness and honesty. Students must recognize that failure to follow the rules and guidelines established in the university's Code of Student Conduct and this syllabus may constitute ``Academic Misconduct.''
+
+The Ohio State University's Code of Student Conduct (Section 3335-23-04) defines academic misconduct as: ``Any activity that tends to compromise the academic integrity of the university or subvert the educational process.'' Examples of academic misconduct include (but are not limited to) plagiarism, collusion (unauthorized collaboration), copying the work of another student, and possession of unauthorized materials during an examination. Ignorance of the university's Code of Student Conduct is never considered an excuse for academic misconduct, so I recommend that you review the Code of Student Conduct and, specifically, the sections dealing with academic misconduct.
+
+\textbf{If I suspect that a student has committed academic misconduct in this course, I am obligated by university rules to report my suspicions to the Committee on Academic Misconduct.} If COAM determines that you have violated the university's Code of Student Conduct (i.e., committed academic misconduct), the sanctions for the misconduct could include a failing grade in this course and suspension or dismissal from the university.
+
+If you have any questions about the above policy or what constitutes academic misconduct in this course, please contact me.
+
+Other sources of information on academic misconduct (integrity) to which you can refer include: 
+
+\begin{itemize}
+	\item Committee on Academic Misconduct web page (\url{go.osu.edu/coam})
+	\item Ten Suggestions for Preserving Academic Integrity (\url{go.osu.edu/ten-suggestions})
+	\item Eight Cardinal Rules of Academic Integrity (\url{go.osu.edu/cardinal-rules})
+\end{itemize}
+
+\subsection*{Copyright for Instructional Materials}
+
+The materials used in connection with this course may be subject to copyright protection and are only for the use of students officially enrolled in the course for the educational purposes associated with the course. Copyright law must be considered before copying, retaining, or disseminating materials outside of the course.
+
+\subsection*{Statement on Title IX}
+All students and employees at Ohio State have the right to work and learn in an environment free from harassment and discrimination based on sex or gender, and the university can arrange interim measures, provide support resources, and explain investigation options, including referral to confidential resources.
+If you or someone you know has been harassed or discriminated against based on your sex or gender, including sexual harassment, sexual assault, relationship violence, stalking, or sexual exploitation, you may find information about your rights and options at \url{titleix.osu.edu} or by contacting the Ohio State Title IX Coordinator at \href{mailto:titleix@osu.edu}{titleix@osu.edu}. Title IX is part of the Office of Institutional Equity (OIE) at Ohio State, which responds to all bias-motivated incidents of harassment and discrimination, such as race, religion, national origin and disability. For more information on OIE, visit \url{equity.osu.edu} or email \href{mailto:equity@osu.edu}{equity@osu.edu}.
+
+\subsection*{Commitment to a Diverse and Inclusive Learning Environment}
+
+The Ohio State University affirms the importance and value of diversity in the student body. Our programs and curricula reflect our multicultural society and global economy and seek to provide opportunities for students to learn more about persons who are different from them. We are committed to maintaining a community that recognizes and values the inherent worth and dignity of every person; fosters sensitivity, understanding, and mutual respect among each member of our community; and encourages each individual to strive to reach his or her own potential. Discrimination against any individual based upon protected status, which is defined as age, color, disability, gender identity or expression, national origin, race, religion, sex, sexual orientation, or veteran status, is prohibited.
+
+\subsection*{Your Mental Health}
+
+As a student you may experience a range of issues that can cause barriers to learning, such as strained relationships, increased anxiety, alcohol/drug problems, feeling down, difficulty concentrating and/or lack of motivation. These mental health concerns or stressful events may lead to diminished academic performance or reduce a student's ability to participate in daily activities. No matter where you are engaged in distance learning, The Ohio State University's Student Life Counseling and Consultation Service (CCS) is here to support you. If you find yourself feeling isolated, anxious or overwhelmed, on-demand resources are available at \url{go.osu.edu/ccsondemand}. You can reach an on-call counselor when CCS is closed at 614- 292-5766, and 24-hour emergency help is also available through the 24/7 National Prevention Hotline at 1-800-273-TALK or at \url{suicidepreventionlifeline.org}. The Ohio State Wellness app is also a great resource available at \url{go.osu.edu/wellnessapp}.
+
+\section*{Accessibility Accommodations for Students with Disability}
+
+The university strives to make all learning experiences as accessible as possible. If you anticipate or experience academic barriers based on your disability including mental health, chronic or temporary medical conditions, please let me know immediately so that we can privately discuss options. To establish reasonable accommodations, I may request that you register with Student Life Disability Services. After registration, make arrangements with me as soon as possible to discuss your accommodations so that they may be implemented in a timely fashion. SLDS contact information: \href{mailto:slds@osu.edu}{slds@osu.edu}; 614-292-3307; 098 Baker Hall, 113 W. 12th Avenue.
+
+\subsection*{Accessibility of Course Technology}
+This online course requires use of CarmenCanvas (Ohio State's learning management system) and other online communication and multimedia tools. If you need additional services to use these technologies, please request accommodations with your instructor. 
+
+\begin{itemize}
+	\item Canvas accessibility (\url{go.osu.edu/canvas-accessibility})
+	\item Streaming audio and video
+	\item CarmenZoom accessibility (\url{go.osu.edu/zoom-accessibility})
+	\item Collaborative course tools\\
+\end{itemize}
+
+\section*{Schedule}
+
+\subsection*{Week 1}
+
+\begin{itemize}
+	\item Lecture: Introduction
+	\item Lab: Refresher on \texttt{R} and \texttt{RStudio} 
+\end{itemize}
+
+\subsection*{Week 2: Lecture will take place on Wednesday due to observing Martin Luther King Jr. day.}
+
+\begin{itemize}
+	\item Lecture: The Overview of Statistical Models 
+\end{itemize}
+
+\subsection*{Week 3}
+
+\begin{itemize}
+	\item Lecture: Probability Distributions and Generalized Linear Models 
+	\item Lab: Refresher on Regression Analysis in \texttt{R}
+\end{itemize}
+
+\subsection*{Week 4}
+
+\begin{itemize}
+	\item Lecture: Theories of Inference
+	\item Lecture: Maximum Likelihood Estimation
+\end{itemize}
+
+\subsection*{Week 5}
+
+\begin{itemize}
+	\item Lecture: Binary Outcome Models
+	\item Lab: Binary Outcome Models in \texttt{R}
+\end{itemize}
+
+\subsection*{Week 6}
+
+\begin{itemize}
+	\item Lecture: Count Outcome Models
+	\item Lab: Count Outcome Models in \texttt{R}
+\end{itemize}
+
+\subsection*{Week 7}
+
+\begin{itemize}
+	\item Lecture: Categorical Outcome Models
+\end{itemize}
+
+\subsection*{Week 8}
+
+\begin{itemize}
+	\item Lecture: Duration Outcome Models
+	\item Lab: Categorical Outcome Models and Duration Outcome Models in \texttt{R}
+\end{itemize}
+
+\subsection*{Week 9}
+
+\begin{itemize}
+	\item Lecture: Model Evaluation and Standard Errors Adjustment
+	\item Lab: Model Evaluation and Standard Errors in \texttt{R}
+\end{itemize}
+
+\subsection*{Week 10}
+
+\begin{itemize}
+	\item Lecture: Coping with Missing Data
+	\item Lab: Missing Data Imputation in \texttt{R}
+\end{itemize}
+
+\subsection*{Week 11}
+
+\begin{itemize}
+	\item Lecture: Research Design and Causal Inference (1)
+	\item Lecture: Research Design and Causal Inference (2)
+\end{itemize}
+
+\subsection*{Week 12}
+
+\begin{itemize}
+	\item Lecture: Problems of Model Dependence
+\end{itemize}
+
+\subsection*{Week 13}
+
+\begin{itemize}
+	\item Lecture: Matching
+	\item Lab: Matching in \texttt{R}
+\end{itemize}
+
+\subsection*{Week 14}
+
+\begin{itemize}
+	\item Lecture: Hierarchical Models
+	\item Lab: Hierarchical Models in \texttt{R}
+\end{itemize}
+
+\subsection*{Week 15}
+
+\begin{itemize}
+	\item Final Review
+\end{itemize}
+
+
+\end{document}
