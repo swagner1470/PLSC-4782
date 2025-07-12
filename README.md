@@ -7,5 +7,6 @@ This repository houses course materials from when I taught PLSC 4782 in Spring 2
 - [Syllabus]()
 - [Lectures]()
 - [Labs]()
+- [Readings]()
 - [Comprehension questions]()
 - [Final]()
